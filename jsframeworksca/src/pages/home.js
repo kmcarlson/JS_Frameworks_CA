@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+
 const Home = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -42,7 +43,7 @@ const Home = () => {
   return (
     <div className="bg-gray-200 min-h-screen p-4">
       <h1 className="text-4xl font-bold mb-4 text-center">
-        The E-Commerce Store
+         The E-Commerce Store
       </h1>
       <div className="mb-4">
         <input
@@ -52,6 +53,7 @@ const Home = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
+           
       </div>
       <div className="flex flex-wrap justify-center">
         {loading ? (
@@ -69,6 +71,7 @@ const Home = () => {
                     alt={product.title}
                     className="mt-4 mx-auto max-w-full h-auto"
                   />
+                  
                 </li>
               ))
             ) : (

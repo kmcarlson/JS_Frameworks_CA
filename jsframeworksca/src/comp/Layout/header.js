@@ -1,6 +1,7 @@
-
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   return (
@@ -12,11 +13,11 @@ const Header = () => {
           <Link to="/" className="text-white hover:text-gray-300">
             Home
           </Link>
-          <Link to="/products" className="text-white hover:text-gray-300">
-            Products
-          </Link>
           <Link to="/contact" className="text-white hover:text-gray-300">
             Contact
+          </Link>
+          <Link to="/cart" className="text-white hover:text-gray-300">
+            <FontAwesomeIcon icon={faShoppingCart} />
           </Link>
         </nav>
       </div>
