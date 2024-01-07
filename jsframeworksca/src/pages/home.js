@@ -15,7 +15,7 @@ const Home = () => {
         );
         const data = await response.json();
 
-        // console.log("Data from API:", data);
+        console.log("Data from API:", data);
 
         if (Array.isArray(data)) {
           setProducts(data);
@@ -58,7 +58,7 @@ const Home = () => {
         {loading ? (
           <p>Loading!?!</p>
         ) : (
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {Array.isArray(searchResults) && searchResults.length > 0 ? (
               searchResults.map((product) => (
                 <li key={product.id} className="bg-white p-4 rounded shadow">
@@ -66,8 +66,17 @@ const Home = () => {
                     <Link to={`/product/${product.id}`}>{product.title}</Link>
                   </h2>
                   <p className="text-gray-700">{product.description}</p>
-                  <p className="text-gray-700">{product.id}</p>
+
                   <p className="mt-2">Price: ${product.price}</p>
+                  <p
+                    className={`text-red-600 mt-2 ${
+                      product.price !== product.discountedPrice
+                        ? "discounted-price"
+                        : ""
+                    }`}
+                  >
+                    New price: ${product.discountedPrice}
+                  </p>
                   <img
                     src={product.imageUrl}
                     alt={product.title}
