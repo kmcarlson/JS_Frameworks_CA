@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -43,7 +43,7 @@ const Home = () => {
   return (
     <div className="bg-gray-200 min-h-screen p-4">
       <h1 className="text-4xl font-bold mb-4 text-center">
-         The E-Commerce Store
+        The E-Commerce Store
       </h1>
       <div className="mb-4">
         <input
@@ -53,7 +53,6 @@ const Home = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-           
       </div>
       <div className="flex flex-wrap justify-center">
         {loading ? (
@@ -63,15 +62,17 @@ const Home = () => {
             {Array.isArray(searchResults) && searchResults.length > 0 ? (
               searchResults.map((product) => (
                 <li key={product.id} className="bg-white p-4 rounded shadow">
-                  <h2 className="text-lg font-bold mb-2">{product.title}</h2>
+                  <h2 className="text-lg font-bold mb-2">
+                    <Link to={`/product/${product.id}`}>{product.title}</Link>
+                  </h2>
                   <p className="text-gray-700">{product.description}</p>
+                  <p className="text-gray-700">{product.id}</p>
                   <p className="mt-2">Price: ${product.price}</p>
                   <img
                     src={product.imageUrl}
                     alt={product.title}
                     className="mt-4 mx-auto max-w-full h-auto"
                   />
-                  
                 </li>
               ))
             ) : (

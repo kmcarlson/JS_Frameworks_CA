@@ -1,12 +1,11 @@
-// App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Layout from './comp/Layout/layout'; 
-// import Products from './pages/products';
-import Cart from './pages/cart';
-import Home from './pages/home';
-import Contact from './pages/contact';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Layout from "./comp/Layout/layout";
+import Cart from "./pages/cart";
+import Home from "./pages/home";
+import Contact from "./pages/contact";
+import ProductDetails from "./pages/productDetails";
+import "./App.css";
 
 function App() {
   return (
@@ -15,7 +14,8 @@ function App() {
         <Routes>
           <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/" element={<Home />} /> 
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
       </Layout>
     </Router>
