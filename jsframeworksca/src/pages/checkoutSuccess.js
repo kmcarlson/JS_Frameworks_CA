@@ -1,6 +1,7 @@
 import React from 'react';
 
 const CheckoutSuccess = () => {
+    
     return (
         <div>
             <h1>Takk for din bestilling!</h1>
@@ -12,3 +13,4 @@ const CheckoutSuccess = () => {
 };
 
 export default CheckoutSuccess;
+
