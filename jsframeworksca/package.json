@@ -17,7 +17,6 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "init": "npm config set \"@fortawesome:registry\" https://npm.fontawesome.com/ && npm config set \"//npm.fontawesome.com/:_authToken\" 157EAAF9-605E-4CC7-8919-807649DFB271 && npm config set \"//registry.npmjs.org/:_authToken\" npm_BZq0fK6YqC",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -29,7 +28,7 @@
       "react-app",
       "react-app/jest"
     ]
-  },  
+  },
   "browserslist": {
     "production": [
       ">0.2%",
