@@ -68,15 +68,13 @@ const Home = () => {
                   <p className="text-gray-700">{product.description}</p>
 
                   <p className="mt-2">Price: ${product.price}</p>
-                  <p
-                    className={`text-red-600 mt-2 ${
-                      product.price !== product.discountedPrice
-                        ? "discounted-price"
-                        : ""
-                    }`}
-                  >
-                    New price: ${product.discountedPrice}
+
+                  <p className={`text-red-600 mt-2`}>
+                    {product.price !== product.discountedPrice && (
+                      <span>New price ${product.discountedPrice}</span>
+                    )}
                   </p>
+
                   <img
                     src={product.imageUrl}
                     alt={product.title}

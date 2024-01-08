@@ -14,7 +14,7 @@ const Navigation = () => {
       </Link>
       <Link to="/cart" className="text-white hover:text-gray-300">
         {/* <FontAwesomeIcon icon={faShoppingCart} /> */}
-        <p>cart</p>
+        <p>Cart</p>
       </Link>
     </nav>
   );
