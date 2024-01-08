@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+// import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Navigation = () => {
   return (
@@ -13,7 +13,8 @@ const Navigation = () => {
         Contact
       </Link>
       <Link to="/cart" className="text-white hover:text-gray-300">
-        <FontAwesomeIcon icon={faShoppingCart} />
+        {/* <FontAwesomeIcon icon={faShoppingCart} /> */}
+        <p>cart</p>
       </Link>
     </nav>
   );
