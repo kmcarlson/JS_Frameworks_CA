@@ -10,6 +10,7 @@ import "./App.css";
 
 function App() {
   const [cart, setCart] = useState([]);
+  console.log("add to cart", cart);
 
   const addToCart = (product) => {
     setCart([...cart, product]);
