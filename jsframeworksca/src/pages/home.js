@@ -42,9 +42,7 @@ const Home = () => {
 
   return (
     <div className="bg-gray-200 min-h-screen p-4">
-      <h1 className="text-4xl font-bold mb-4 text-center">
-        The E-Commerce Store
-      </h1>
+      <h1 className="text-4xl font-bold mb-4 text-center">The E Store</h1>
       <div className="mb-4">
         <input
           type="text"
@@ -58,28 +56,28 @@ const Home = () => {
         {loading ? (
           <p>Loading!?!</p>
         ) : (
-          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 items-stretch">
             {Array.isArray(searchResults) && searchResults.length > 0 ? (
               searchResults.map((product) => (
-                <li key={product.id} className="bg-white p-4 rounded shadow">
-                  <h2 className="text-lg font-bold mb-2">
-                    <Link to={`/product/${product.id}`}>{product.title}</Link>
-                  </h2>
-                  <p className="text-gray-700">{product.description}</p>
-
-                  <p className="mt-2">Price: ${product.price}</p>
-
-                  <p className={`text-red-600 mt-2`}>
-                    {product.price !== product.discountedPrice && (
-                      <span>New price ${product.discountedPrice}</span>
-                    )}
-                  </p>
-
-                  <img
-                    src={product.imageUrl}
-                    alt={product.title}
-                    className="mt-4 mx-auto max-w-full h-auto"
-                  />
+                <li
+                  key={product.id}
+                  className="bg-white p-4 rounded shadow h-full"
+                >
+                  <Link to={`/product/${product.id}`} className="block h-full">
+                    <h2 className="text-lg font-bold mb-2">{product.title}</h2>
+                    <p className="text-gray-700">{product.description}</p>
+                    <p className="mt-2">Price: ${product.price}</p>
+                    <p className={`text-red-600 mt-2`}>
+                      {product.price !== product.discountedPrice && (
+                        <span>New price ${product.discountedPrice}</span>
+                      )}
+                    </p>
+                    <img
+                      src={product.imageUrl}
+                      alt={product.title}
+                      className="mt-4 mx-auto max-w-full h-auto"
+                    />
+                  </Link>
                 </li>
               ))
             ) : (

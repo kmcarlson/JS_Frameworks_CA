@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/">
           <div className="text-white text-lg font-bold">
-            The E-Commerce Store
+            The E Store
           </div>
         </Link>
         <Navigation />
