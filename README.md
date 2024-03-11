@@ -12,6 +12,12 @@ git clone https://github.com/kmcarlson/JS_Frameworks_CA.git
 cd JS_Frameworks_CA
 
 
+To install
 ```bash
 npm install
+```
+
+To start dev
+```bash
+npm start
 ```
