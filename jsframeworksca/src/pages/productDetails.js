@@ -12,6 +12,8 @@ const ProductDetails = ({ addToCart }) => {
       .catch((error) => console.error("Error fetching product:", error));
   }, [id]);
 
+  const discounted = product?.price - product?.discountedPrice;
+
   return (
     <div className="container mx-auto p-4">
       {product ? (
@@ -26,11 +28,12 @@ const ProductDetails = ({ addToCart }) => {
               <h1 className="text-xl font-bold mb-2">{product.title}</h1>
               <p className="text-gray-600 mb-2">{product.description}</p>
               <p className="text-gray-600 mb-2">Price: ${product.price}</p>
-              <p className={`text-red-600 mt-2`}>
-                {product.price !== product.discountedPrice && (
-                  <span>New price ${product.discountedPrice}</span>
-                )}
-              </p>
+              {product.price !== product.discountedPrice && (
+                <p className={`text-red-600 mb-2`}>
+                  <span>New price: ${product.discountedPrice}</span>
+                  <span className="ml-2 font-bold">(Save ${discounted.toFixed(2)})</span>
+                </p>
+              )}
               <button
                 className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
                 onClick={() => addToCart(product)}

@@ -21,8 +21,7 @@ const Cart = ({ cart, removeFromCart }) => {
               product.discountedPrice ? "text-red-600" : "text-gray-600"
             } mb-2`}
           >
-            Price: $
-            {product.discountedPrice ? product.discountedPrice : product.price}
+            Price: ${product.discountedPrice || product.price}
           </p>
 
           <button
@@ -34,16 +33,17 @@ const Cart = ({ cart, removeFromCart }) => {
         </div>
       ))}
       {cart.length > 0 && (
-        <div className="mt-4">
-          <p className="text-lg font-bold">
+        <div className="mt-4 flex items-center">
+          <p className="text-lg font-bold mr-4">
             Total Price: ${totalPrice.toFixed(2)}
           </p>
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-gray-600 mr-4">
             Total Quantity: {totalQuantity}
           </p>
+
           <Link
             to="/checkoutSuccess"
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer mt-4"
+            className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
           >
             Checkout
           </Link>
