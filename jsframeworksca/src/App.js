@@ -6,14 +6,23 @@ import Home from "./pages/home";
 import Contact from "./pages/contact";
 import ProductDetails from "./pages/productDetails";
 import CheckoutSuccess from "./pages/checkoutSuccess";
+import Navigation from "./comp/Layout/navigation";
 import "./App.css";
 
 function App() {
   const [cart, setCart] = useState([]);
-  console.log("add to cart", cart);
 
   const addToCart = (product) => {
-    setCart([...cart, product]);
+    const existingProductIndex = cart.findIndex(
+      (item) => item.id === product.id
+    );
+    if (existingProductIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart[existingProductIndex].quantity += 1;
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
   };
 
   const removeFromCart = (id) => {
@@ -23,6 +32,7 @@ function App() {
   return (
     <Router>
       <Layout>
+        <Navigation cart={cart} />
         <Routes>
           <Route
             path="/cart"
