@@ -6,7 +6,6 @@ import Home from "./pages/home";
 import Contact from "./pages/contact";
 import ProductDetails from "./pages/productDetails";
 import CheckoutSuccess from "./pages/checkoutSuccess";
-import Navigation from "./comp/Layout/navigation";
 import "./App.css";
 
 function App() {
@@ -36,8 +35,7 @@ function App() {
 
   return (
     <Router>
-      <Layout>
-        <Navigation totalQuantity={totalQuantity} />
+      <Layout totalQuantity={totalQuantity}>
         <Routes>
           <Route
             path="/cart"

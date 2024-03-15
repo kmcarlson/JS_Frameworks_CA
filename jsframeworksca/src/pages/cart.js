@@ -2,12 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Cart = ({ cart, removeFromCart }) => {
+	// console.log(cart);
   const totalPrice = cart.reduce((total, product) => {
     const price = product.discountedPrice || product.price;
     return total + price;
   }, 0);
 
-  const totalQuantity = cart.reduce((total, product) => total + 1, 0);
+  const totalQuantity = cart.reduce((total, product) => total + product.quantity, 0);
+  // console.log(totalQuantity)
 
   return (
     <div className="p-4">
