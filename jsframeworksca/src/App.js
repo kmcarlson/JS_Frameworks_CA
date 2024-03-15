@@ -12,6 +12,11 @@ import "./App.css";
 function App() {
   const [cart, setCart] = useState([]);
 
+  const totalQuantity = cart.reduce(
+    (total, product) => total + product.quantity,
+    0
+  );
+
   const addToCart = (product) => {
     const existingProductIndex = cart.findIndex(
       (item) => item.id === product.id
@@ -32,7 +37,7 @@ function App() {
   return (
     <Router>
       <Layout>
-        <Navigation cart={cart} />
+        <Navigation totalQuantity={totalQuantity} />
         <Routes>
           <Route
             path="/cart"
