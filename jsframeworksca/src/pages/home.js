@@ -15,8 +15,6 @@ const Home = () => {
         );
         const data = await response.json();
 
-        // console.log("Data from API:", data);
-
         if (Array.isArray(data)) {
           setProducts(data);
           setLoading(false);

@@ -62,7 +62,7 @@ const Contact = () => {
 
         <input
           type="submit"
-          className="w-full p-2 bg-blue-500 text-white rounded-md cursor-pointer"
+          className="w-full p-2 bg-blue-500 text-white rounded-md cursor-pointer sm:mb-4"
         />
       </form>
     </div>

@@ -31,7 +31,9 @@ const ProductDetails = ({ addToCart }) => {
               {product.price !== product.discountedPrice && (
                 <p className={`text-red-600 mb-2`}>
                   <span>New price: ${product.discountedPrice}</span>
-                  <span className="ml-2 font-bold">(Save ${discounted.toFixed(2)})</span>
+                  <span className="ml-2 font-bold">
+                    (Save ${discounted.toFixed(2)})
+                  </span>
                 </p>
               )}
               <button

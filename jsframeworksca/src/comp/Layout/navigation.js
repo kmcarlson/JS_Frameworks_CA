@@ -10,12 +10,13 @@ const Navigation = ({ totalQuantity }) => {
       <Link to="/contact" className="text-white hover:text-gray-300">
         Contact
       </Link>
-      <Link to="/cart" className="text-white hover:text-gray-300 flex items-center">
- <img className="max-w-7 fill-white" src="/cart.svg" alt="Cart" />
- <span className="ml-2">({totalQuantity})</span>
-</Link>
-
-
+      <Link
+        to="/cart"
+        className="text-white hover:text-gray-300 flex items-center"
+      >
+        <img className="max-w-7 fill-white" src="/cart.svg" alt="Cart" />
+        <span className="ml-2">({totalQuantity})</span>
+      </Link>
     </nav>
   );
 };
