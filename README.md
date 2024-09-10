@@ -10,6 +10,13 @@
   can bid. If you're a student at Noroff, you can create an account and
   participate.
 
+  ## Built With
+
+ - HTML
+ - CSS
+ - JavaScript
+ - Tailwind CSS
+
 
 ## Installation
 
